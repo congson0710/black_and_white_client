@@ -7,6 +7,8 @@ import 'tachyons';
 
 import App from './App';
 import auth from './Auth';
+import { store } from './redux';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
@@ -14,7 +16,6 @@ import './index.css';
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
   request: operation => {
-    console.log('token', auth.getIdToken());
     operation.setContext(context => ({
       headers: {
         ...context.headers,
@@ -27,7 +28,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')
