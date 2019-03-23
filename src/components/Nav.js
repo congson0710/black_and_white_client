@@ -44,10 +44,18 @@ class Nav extends React.Component {
                 Log out
               </button>
             ) : (
-              <button className="btn btn-info log" onClick={() => auth.login()}>
+              <button
+                className="btn btn-info br4 log"
+                onClick={() => auth.login()}
+              >
                 Log In
               </button>
             )}
+          </li>
+          <li>
+            <Link to="/login">
+              <button className="btn btn-primary br4 log">Sign Up</button>
+            </Link>
           </li>
         </ul>
       </nav>
