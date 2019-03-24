@@ -4,7 +4,8 @@ import Nav from './components/Nav';
 import ListBook from './components/ListBook';
 import CreateBook from './components/CreateBook';
 import Callback from './components/Callback';
-import Login from './components/Login';
+import Login from './screens/Login';
+import SignUp from './screens/SignUp';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <Route exact path="/create" component={CreateBook} />
         <Route exact path="/callback" component={Callback} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/sign_up" component={SignUp} />
       </div>
     );
   }
