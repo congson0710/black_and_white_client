@@ -11,8 +11,8 @@ import { graphql } from 'react-apollo';
 import Input from './Input';
 
 const LOGIN_MUTATION = gql`
-  mutation LoginMutation($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation LoginMutation($userName: String!, $password: String!) {
+    login(userName: $userName, password: $password) {
       token
     }
   }
