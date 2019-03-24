@@ -35,19 +35,34 @@ class Nav extends React.Component {
           </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
-          <li>
-            {auth.isAuthenticated() ? (
+          {auth.isAuthenticated() ? (
+            <li>
               <button
                 className="btn btn-danger log"
                 onClick={() => this.logout()}
               >
                 Log out
               </button>
-            ) : (
-              <button className="btn btn-info log" onClick={() => auth.login()}>
-                Log In
+            </li>
+          ) : (
+            <li>
+              <button
+                className="btn btn-info br4 log"
+                onClick={() => auth.login()}
+              >
+                Login With Auth0
               </button>
-            )}
+            </li>
+          )}
+          <li>
+            <Link to="/login">
+              <button className="btn btn-primary br4 log">Login</button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/sign_up">
+              <button className="btn btn-primary br4 log">Sign Up</button>
+            </Link>
           </li>
         </ul>
       </nav>
